@@ -1,0 +1,100 @@
+이 블로깅은, NVIDIA 그래픽카드를 사용하면서, ubuntu 설치때 엄한 화면만 보여주는 사람들을 위한 블로깅 (화면 캡쳐 삽입)
+At this post, I want to share try-and-error experience when I was try to install and setup ubuntu at my personal linux server.
+컴퓨터 사양 (Server main components)
+CPU : i9-7900x
+RAM : 128GB
+SSD : SAMSUNG M2 960 512GB
+HDD : TOSHIBA 2TB
+GPU : GTX-1080Ti
+
+Linux 설치용 LiveUSB를 만든다.
+Make Ubuntu LiveUSB thmb drive 
+
+USB로 부팅을 시키는데, try ubuntu ~ 나 Installing ubuntu에 커서를 놓고 "e" 키를 누른다. 눌러서 표시되는 내용 중에 아래 내용을 변경한다 (화면캡쳐삽입)
+At the first step, type keyboard 'e' over the "try ubuntu and installing" or "installing ubuntu", and add "nomodeset" as followings.
+
+.-------------------------------
+What is "nomodeset"
+NVIDIA device와 호환성이 좋지 않은 nouveau 를 X 서버에서 디폴트 로딩하지 않고 부팅할 수 있게 함.
+Normally, Ubuntu has not compatible driver for NVIDIA the name of "nouveau", so block nouveau to loading on X server.
+
+방법으로는, nouveau를 Blacklist에 올리거나 recovery mode 에서 nouveau=0 으로 Off 할 수도 있지만, 여러분의 선택이다. 
+There is some way to achieve this, you may register blacklist or nouveau off at the recovery mode as "nouveau=0"
+.-------------------------------
+
+quiet slpash - - -
+quiet slpash nomodeset 
+
+이후 F10을 눌러서 Try Ubuntu and installing 혹은 Installing Ubuntu로 들어간다
+Then, press F10 key one the keyboard, and start try ubuntu and installing or installing ubuntu mode.
+
+정상 설치 후 재시작함
+Install Ubuntu and restart.
+
+재시작을 위해 종료되었을 때 LiveUSB는 제거한다
+During restarting (before usb thumb drive found), remove LiveUSB from USB port
+
+재시작할때, alt 키를 누르고 있으면 검은 화면에 커서가 보이다가 선택모드에 들어간다. (화면캡쳐삽입)
+When start RESTARTING process, press and hold 'ALT" key before option list including following image.
+
+Ubuntu 커서 위에서 e를 눌러서 아래를 nomodeset으로 변경한다.
+type keyboard 'e' over the "Ubuntu", and add "nomodeset" as followings.
+
+As Is : quiet slpash $vt_handoff
+To Be : quiet slpash nomodeset
+
+이후 F10을 눌러서 부팅을 하면된다
+Then, prss F10 key on the keyboard, and you can start Ubuntu :)
+
+부팅 이후 터미널을 열어서 GRUB관련 내용(아래 내용) 을 설치 혹은 설치된 내용을 확인한다. 
+After success booting, open "Terminal" and Install/Install check GRUB packages like below.
+
+sudo apt-get install grub
+sudo apt-get install grub2
+sudo apt-get install grub2-common
+sudo apt-get update
+.== you can try both of them
+
+
+Grub에서 다음 부팅될 때 Nomodeset 옵션을 자동으로 인지하기위해 아래의 내용을  GRUB에 변경하고 저장한다. 아래의 명령어를 실행한다.
+To apply next booting (nomodeset booting), modify GRUB document and save it like followings (Add "nomodeset").
+
+sudo gedit /etc/default/grub
+As Is : quiet slpash
+To Be : quiet slpash nomodeset
+
+그리고 다음 부팅전에 변경내용을 반영하기 위해서 grub를 업데이트 해줘야하는데, 아래 명령어로 수행한다
+Then, to apply your work at the next every booting, you need to update GRUB, so execute following commands.
+
+sudo update-grub
+
+만약에 이 명령어가 실행하지 않는다면, apt-get 으로 GRUB 관련 패키지를 설치하거나 업데이트한다.
+If above commands does not work, you need install GRUB package or update.
+
+아래는 추가로 수행해도되고 안해도 된다.
+Following work is optional.
+
+혹시나 lightdm으로인해 문제가 생길 수 있으니, gdm 으로 변경해본다면?
+Just to be sure, lightdm option may make problem, so you can change option to gdm.
+
+sudo apt-get install gdm
+sudo dpkg-reconfigure gdm
+And select "gdm3"
+
+Reference : https://m.blog.naver.com/PostView.nhn?blogId=kalkins&logNo=80189440368&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+
+
+Nvidia driver Setting ( you can find NVIDIA driver at official NVIDIA website )
+여기서 이걸 수행하기 전에 GCC, make 를 먼저 설치한다
+Before start driver installation, you need to install GCC and Make like following command set.
+
+sudo apt-get install gcc
+sudo apt-get install make
+
+설치하다가 에러가 나는 부분은 무시할 수 없지만, 마지막에 워닝이 뜨는 부분은 overwrite 해 버리고 나가면 됨
+You may not ignore (You can't ignore :)) errors during installing, you may ignore warning the thme of around finalize installation (you can select "overwrite" option).
+
+설치가 끝난 후 바로 그래픽이 좋아졌음을 알 수 없고, 컴퓨터를 껐다 켜야 적용된다.
+You may not find better graphic status immediately after complete NVIDIA driver installation, you may see better graphic after restart system.
+
+Reference : http://pythonkim.tistory.com/48
