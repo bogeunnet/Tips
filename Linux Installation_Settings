@@ -1,3 +1,5 @@
+# Linux installation trouble shooting/Tips
+
 이 블로깅은, NVIDIA 그래픽카드를 사용하면서, ubuntu 설치때 엄한 화면만 보여주는 사람들을 위한 블로깅 (화면 캡쳐 삽입)
 At this post, I want to share try-and-error experience when I was try to install and setup ubuntu at my personal linux server.
 컴퓨터 사양 (Server main components)
