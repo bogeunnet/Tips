@@ -15,14 +15,14 @@ Make Ubuntu LiveUSB thmb drive
 USB로 부팅을 시키는데, try ubuntu ~ 나 Installing ubuntu에 커서를 놓고 "e" 키를 누른다. 눌러서 표시되는 내용 중에 아래 내용을 변경한다 (화면캡쳐삽입)
 At the first step, type keyboard 'e' over the "try ubuntu and installing" or "installing ubuntu", and add "nomodeset" as followings.
 
-.-------------------------------
+-------------------------------
 What is "nomodeset"
 NVIDIA device와 호환성이 좋지 않은 nouveau 를 X 서버에서 디폴트 로딩하지 않고 부팅할 수 있게 함.
 Normally, Ubuntu has not compatible driver for NVIDIA the name of "nouveau", so block nouveau to loading on X server.
 
 방법으로는, nouveau를 Blacklist에 올리거나 recovery mode 에서 nouveau=0 으로 Off 할 수도 있지만, 여러분의 선택이다. 
 There is some way to achieve this, you may register blacklist or nouveau off at the recovery mode as "nouveau=0"
-.-------------------------------
+-------------------------------
 
 quiet slpash - - -
 quiet slpash nomodeset 
@@ -55,7 +55,7 @@ sudo apt-get install grub
 sudo apt-get install grub2
 sudo apt-get install grub2-common
 sudo apt-get update
-.== you can try both of them
+-- you can try both of them
 
 
 Grub에서 다음 부팅될 때 Nomodeset 옵션을 자동으로 인지하기위해 아래의 내용을  GRUB에 변경하고 저장한다. 아래의 명령어를 실행한다.
