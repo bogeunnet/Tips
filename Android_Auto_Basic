@@ -19,7 +19,13 @@ adb devices
 그 이전에  DHU (Desktop Head Unit) 을 Android Studio에서 먼저 깔아줘야한다.
 
 
+
 제너럴하게는, 
 https://developer.android.com/training/auto/testing/
 
 이걸 따라가봐 (리눅스 기준으로 작성됨)
+
+주의!!! ADB forward 반드시 필요!!
+아래 terminal을 열어서 type 필요
+
+adb forward tcp:5277 tcp:5277
