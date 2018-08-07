@@ -1,0 +1,25 @@
+영문화 예정 (English Version will be posted in few days)
+
+안드로이드오토 시뮬레이터 설정
+
+https://android-developers.googleblog.com/2015/08/announcing-android-auto-desktop-head.html
+
+위에껄 수행하는데, adb가 안깔려있다면, 
+
+
+ADB를 설치해야하는데, 그건 이걸 참조
+https://stackoverflow.com/questions/27970352/how-do-i-run-adb-on-a-mac-terminal
+
+echo 'export PATH=$PATH:~/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
+
+source ~/.bash_profile
+
+adb devices
+
+그 이전에  DHU (Desktop Head Unit) 을 Android Studio에서 먼저 깔아줘야한다.
+
+
+제너럴하게는, 
+https://developer.android.com/training/auto/testing/
+
+이걸 따라가봐 (리눅스 기준으로 작성됨)
