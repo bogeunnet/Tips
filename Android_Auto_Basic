@@ -1,10 +1,11 @@
 영문화 예정 (English Version will be posted in few days)
 
-안드로이드오토 시뮬레이터 설정
+안드로이드오토 시뮬레이터 설정 (Android Auto Simulator Setting)
 
 https://android-developers.googleblog.com/2015/08/announcing-android-auto-desktop-head.html
 
 위에껄 수행하는데, adb가 안깔려있다면, 
+To do above link, you need adb on your computer. If you don't have one, please follow below
 
 
 ADB를 설치해야하는데, 그건 이걸 참조
