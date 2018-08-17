@@ -2,31 +2,36 @@
 
 안드로이드오토 시뮬레이터 설정 (Android Auto Simulator Setting)
 
-https://android-developers.googleblog.com/2015/08/announcing-android-auto-desktop-head.html
+Link : https://android-developers.googleblog.com/2015/08/announcing-android-auto-desktop-head.html
 
-위에껄 수행하는데, adb가 안깔려있다면, 
-To do above link, you need adb on your computer. If you don't have one, please follow below
+위에껄 수행하는데, adb가 안깔려있다면, ADB를 설치해야하는데, 그건 이걸 참조
+To do above link, you need adb on your computer. If you don't have one, please visit following URL
 
+URL : 
+   https://stackoverflow.com/questions/27970352/how-do-i-run-adb-on-a-mac-terminal
 
-ADB를 설치해야하는데, 그건 이걸 참조
-https://stackoverflow.com/questions/27970352/how-do-i-run-adb-on-a-mac-terminal
+And you can find instuction like below
 
 echo 'export PATH=$PATH:~/Library/Android/sdk/platform-tools/' >> ~/.bash_profile
-
 source ~/.bash_profile
-
 adb devices
 
-그 이전에  DHU (Desktop Head Unit) 을 Android Studio에서 먼저 깔아줘야한다.
+그리고 DHU (Desktop Head Unit) 을 Android Studio에서 먼저 깔아줘야한다.
+Next Step, install DHU(Desktop Head Unit) on your Android Studio.
 
 
+And Then, Follow Above Link ( https://android-developers.googleblog.com/2015/08/announcing-android-auto-desktop-head.html ),
 
-제너럴하게는, 
-https://developer.android.com/training/auto/testing/
+You can see/activate DHU (Desktop Head Unit) on your local desktop
 
-이걸 따라가봐 (리눅스 기준으로 작성됨)
+======================
+제너럴하게는, 아래의 내용을 참고하면 된다. (리눅스 기준으로 작성됨)
+In general, please visit following and check. Most of official website of Android Auto witten for Linux machine.
+URL : https://developer.android.com/training/auto/testing/
+======================
 
 주의!!! ADB forward 반드시 필요!!
-아래 terminal을 열어서 type 필요
+Warning !! Don't forget "ADB forward command"
 
-adb forward tcp:5277 tcp:5277
+inster and enter command line
+   : adb forward tcp:5277 tcp:5277
