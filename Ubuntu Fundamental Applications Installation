@@ -1,0 +1,35 @@
+SSH
+
+#Install openssh-server package and check client version of ssh
+
+sudo apt-get install openssh-server
+sudo apt-get install ssh
+
+
+#Open configure file for setting.
+
+sudo nano /etc/ssh/sshd_config
+
+#Erase sharp to activate settings
+
+Port 22....
+
+Please Check Reference
+ : http://programmingskills.net/archives/315
+ 
+ 
+
+SSH Client problems
+ : Sometimes, you may see following warning when you tried to connect ssh on terminal
+
+[Host key verification failed.]
+
+In this case, you should delete known_hosts files (Initiate information)
+
+1) Mac 
+ : rm ~/.ssh/known_hosts
+
+
+
+Please Check Reference
+  : https://unix.stackexchange.com/questions/48901/host-key-verification-failed-even-with-removed-ssh-known-hosts
