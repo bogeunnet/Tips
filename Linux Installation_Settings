@@ -66,24 +66,24 @@ Then, prss F10 key on the keyboard, and you can start Ubuntu :)
 부팅 이후 터미널을 열어서 GRUB관련 내용(아래 내용) 을 설치 혹은 설치된 내용을 확인한다. 
 After success booting, open "Terminal" and Install/Install check GRUB packages like below.
 
-sudo apt-get install grub
-sudo apt-get install grub2
-sudo apt-get install grub2-common
-sudo apt-get update
+$ sudo apt-get install grub
+$ sudo apt-get install grub2
+$ sudo apt-get install grub2-common
+$ sudo apt-get update
 -- you can try both of them
 
 
 Grub에서 다음 부팅될 때 Nomodeset 옵션을 자동으로 인지하기위해 아래의 내용을  GRUB에 변경하고 저장한다. 아래의 명령어를 실행한다.
 To apply next booting (nomodeset booting), modify GRUB document and save it like followings (Add "nomodeset").
 
-sudo gedit /etc/default/grub
+$ sudo gedit /etc/default/grub
 As Is : quiet slpash
 To Be : quiet slpash nomodeset
 
 그리고 다음 부팅전에 변경내용을 반영하기 위해서 grub를 업데이트 해줘야하는데, 아래 명령어로 수행한다
 Then, to apply your work at the next every booting, you need to update GRUB, so execute following commands.
 
-sudo update-grub
+$ sudo update-grub
 
 만약에 이 명령어가 실행하지 않는다면, apt-get 으로 GRUB 관련 패키지를 설치하거나 업데이트한다.
 If above commands does not work, you need install GRUB package or update.
@@ -94,9 +94,13 @@ Following work is optional.
 혹시나 lightdm으로인해 문제가 생길 수 있으니, gdm 으로 변경해본다면?
 Just to be sure, lightdm option may make problem, so you can change option to gdm.
 
-sudo apt-get install gdm
-sudo dpkg-reconfigure gdm
+$ sudo apt-get install gdm
+$ sudo dpkg-reconfigure gdm
 And select "gdm3"
+or 
+$ sudo apt-get install gdm3
+$ sudo dpkg-reconfigure gdm3
+
 
 Reference : https://m.blog.naver.com/PostView.nhn?blogId=kalkins&logNo=80189440368&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 
@@ -105,8 +109,8 @@ Nvidia driver Setting ( you can find NVIDIA driver at official NVIDIA website )
 여기서 이걸 수행하기 전에 GCC, make 를 먼저 설치한다
 Before start driver installation, you need to install GCC and Make like following command set.
 
-sudo apt-get install gcc
-sudo apt-get install make
+$ sudo apt-get install gcc
+$ sudo apt-get install make
 
 설치하다가 에러가 나는 부분은 무시할 수 없지만, 마지막에 워닝이 뜨는 부분은 overwrite 해 버리고 나가면 됨
 You may not ignore (You can't ignore :)) errors during installing, you may ignore warning the thme of around finalize installation (you can select "overwrite" option).
