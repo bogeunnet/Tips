@@ -45,4 +45,23 @@ For native installation, I need to install pip or pip3
 And upgrade pip to install jupyter
 & python3 -m pip uninstall pip
 
+sudo apt-get install jupyter-notebook
+
+Add Permission on pre-defined folder
+sudo chmod -R 777 /data/folder
+
+Modify jupyter-notebook settings
+sudo nano /home/'username'/.jupyter/jupyter_notebook_config.py
+
+Start jupyter-notebook
+$ jupyter-notebook
+
+
+Reference : 
+   http://goodtogreate.tistory.com/entry/IPython-Notebook-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95
+
+
+
+
+
 
