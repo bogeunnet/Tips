@@ -33,3 +33,16 @@ In this case, you should delete known_hosts files (Initiate information)
 
 Please Check Reference
   : https://unix.stackexchange.com/questions/48901/host-key-verification-failed-even-with-removed-ssh-known-hosts
+
+
+
+
+Jupyter Notebook
+
+For native installation, I need to install pip or pip3
+& sudo apt-get install python3-pip3
+
+And upgrade pip to install jupyter
+& python3 -m pip uninstall pip
+
+
