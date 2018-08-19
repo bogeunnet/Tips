@@ -30,6 +30,21 @@ quiet slpash nomodeset
 이후 F10을 눌러서 Try Ubuntu and installing 혹은 Installing Ubuntu로 들어간다
 Then, press F10 key one the keyboard, and start try ubuntu and installing or installing ubuntu mode.
 
+--------- My Settings----------------------
+SSD
+1. /boot    ext4    1024 MB
+2.          efi     1924 MB
+3.          swap    16000 MB
+4. /var     ext4    16000 MB
+5. /tmp     ext4    16000 MB
+6. /        ext4    200000 MB
+7. /home    ext4    Remaining size (262060 MB)
+
+HDD
+1./data     ext4    All
+-------------------------------------------
+
+
 정상 설치 후 재시작함
 Install Ubuntu and restart.
 
