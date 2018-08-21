@@ -56,6 +56,10 @@ sudo nano /home/'username'/.jupyter/jupyter_notebook_config.py
 Start jupyter-notebook
 $ jupyter-notebook
 
+Start jupyter-notebook with nohup and & command
+$ nohup jupyter-notebook &
+
+
 
 Reference : 
    http://goodtogreate.tistory.com/entry/IPython-Notebook-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95
