@@ -45,5 +45,8 @@ inster and enter command line
 
 
 Launch nothing activity
+------------------------
 https://github.com/googlesamples/android-CommitContentSampleIME/issues/2
-==> Edit COnfigurations => Launch "Nothing"
+You can get Android Studio not to complain by going to the "Edit Configurations" menu 
+(tap "Shift" three times, type "Edit Configurations"), then change Launch Options > Launch to "Nothing".
+------------------------
