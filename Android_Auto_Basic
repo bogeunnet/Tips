@@ -27,7 +27,7 @@ You can see/activate DHU (Desktop Head Unit) on your local desktop
  adb forward tcp:5277 tcp:5277
  ./desktop-head-unit
  
- /Users/bogeunkim/Library/Android/sdk/extras/google/auto/
+ cd /Users/bogeunkim/Library/Android/sdk/extras/google/auto/
 
 
 ======================
