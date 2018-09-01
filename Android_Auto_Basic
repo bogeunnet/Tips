@@ -41,3 +41,9 @@ Warning !! Don't forget "ADB forward command"
 
 inster and enter command line
    : adb forward tcp:5277 tcp:5277
+
+
+
+Launch nothing activity
+https://github.com/googlesamples/android-CommitContentSampleIME/issues/2
+==> Edit COnfigurations => Launch "Nothing"
