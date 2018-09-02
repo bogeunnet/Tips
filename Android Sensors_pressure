@@ -1,0 +1,59 @@
+Android Sensor 
+
+http://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=220988286887&categoryNo=80&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+
+
+public class BarometerActivity extends AppCompatActivity implements SensorEventListener{
+
+    SensorManager sensorManager;
+    Sensor sensor;
+
+    private ConstraintLayout constraintLayout;
+    private TextView tvSensorStatus;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_barometer);
+
+        constraintLayout = (ConstraintLayout) findViewById(R.id.cl_sensor);
+        tvSensorStatus = (TextView) findViewById(R.id.tv_status);
+
+        //센서매니저 인스턴스
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        //기압센서 쿼리
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+        //리스너 등록
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        long timestamp = sensorEvent.timestamp;
+        float presure = sensorEvent.values[0];
+        presure = (float) (Math.round(presure*100)/100.0); //소수점 2자리 반올림
+        //기압을 바탕으로 고도를 계산(맞는거 맞아???)
+        float height = SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE, presure);
+        height = (float) (Math.round(height*100)/100.0);
+        //화면에 출력
+        tvSensorStatus.setText("기압: "+String.valueOf(presure) +" hPa \n 고도: "+height+"m" );
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
+}
+[출처] [안드로이드 스튜디오] 안드로이드 기기의 다양한 센서들(3) : Barometer|작성자 코스모스
