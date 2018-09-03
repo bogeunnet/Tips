@@ -50,3 +50,10 @@ https://github.com/googlesamples/android-CommitContentSampleIME/issues/2
 You can get Android Studio not to complain by going to the "Edit Configurations" menu 
 (tap "Shift" three times, type "Edit Configurations"), then change Launch Options > Launch to "Nothing".
 ------------------------
+
+
+
+대기압 센서 값 받아오기 위한 소스
+http://blog.naver.com/PostView.nhn?blogId=cosmosjs&logNo=220988286887&categoryNo=80&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+
+
