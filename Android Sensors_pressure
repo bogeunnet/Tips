@@ -56,4 +56,3 @@ public class BarometerActivity extends AppCompatActivity implements SensorEventL
         sensorManager.unregisterListener(this);
     }
 }
-[출처] [안드로이드 스튜디오] 안드로이드 기기의 다양한 센서들(3) : Barometer|작성자 코스모스
