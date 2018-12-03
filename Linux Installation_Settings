@@ -73,6 +73,12 @@ $ sudo apt-get update
 -- you can try both of them
 
 
+NVIDIA 그래픽카드 설정은 블랙리스트로 등록해서 오동작이 없게 한다
+Add NVIDIA driver as blacklist to avoid error during booting.
+Reference
+  - https://askubuntu.com/questions/481414/install-nvidia-driver-instead-of-nouveau
+
+
 Grub에서 다음 부팅될 때 Nomodeset 옵션을 자동으로 인지하기위해 아래의 내용을  GRUB에 변경하고 저장한다. 아래의 명령어를 실행한다.
 To apply next booting (nomodeset booting), modify GRUB document and save it like followings (Add "nomodeset").
 
