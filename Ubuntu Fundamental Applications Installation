@@ -53,6 +53,9 @@ sudo chmod -R 777 /data/folder
 Modify jupyter-notebook settings
 sudo nano /home/'username'/.jupyter/jupyter_notebook_config.py
 
+  c.NotebookApp.ip
+  c.NotebookApp.open_browser
+
 Start jupyter-notebook
 $ jupyter-notebook
 
@@ -68,5 +71,6 @@ Reference :
 
 How to enable rc.local using systemd
 URL : https://www.linuxbabe.com/linux-server/how-to-enable-etcrc-local-with-systemd
+New Reference : http://breath91.tistory.com/entry/%EC%A3%BC%ED%94%BC%ED%84%B0-%EB%85%B8%ED%8A%B8%EB%B6%81jupyter-notebook-%EC%84%A4%EC%B9%98%EB%B6%80%ED%84%B0-%EC%82%AC%EC%9A%A9%EB%B2%95-%EC%9B%90%EA%B2%A9-%EC%84%A4%EC%A0%95-%EA%B9%8C%EC%A7%80
 
 
