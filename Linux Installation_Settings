@@ -125,3 +125,52 @@ You may not ignore (You can't ignore :)) errors during installing, you may ignor
 You may not find better graphic status immediately after complete NVIDIA driver installation, you may see better graphic after restart system.
 
 Reference : http://pythonkim.tistory.com/48
+
+=============================================================================================
+Followings are example of manual partition setting for ubuntu ( 2TB HDD Disk )
+    swap 파티션 (일반적으로 메모리의 1~2배정도)
+    /boot 파티션 (150~300mb 사이)
+    / 파티션    (30GB~50GB 이상 하시길바랍니다.)
+    /home 파티션 (나머지 용량의 대부분)
+
+
+제가 실제 ubuntu install 과정에서 나눈 파티션 (2TB기준)
+
+순서대로 파티션 생성하시길 권장합니다.
+
+swap - 32GB(주파티션, 스왑)
+
+스왑 파티션은 가상 메모리를 지원하는데 사용됩니다. 즉, 시스템이 처리하는 데이터를 저장할 RAM이 충분하지 않을 때 스왑 파티션에 자료가 기록됩니다. 저희 랩실에 DDR4 16GB 쓰고 있기 때문에 32GB로 설정해줬습니다.
+
+/ - 50GB(주파티션, ex4)
+
+저희 연구실 특성상 linux에 install할 프로그램이 많아서 / 파티션의 용량을 크게 잡았습니다. 50GB정도로 잡았는데 지금 실제 사용량이 16GB입니다. 용량이 넉넉하다면 30~50GB정도 잡아주시면될 것 같습니다.
+
+/boot - 500mb(주파티션, ex4)
+
+boot할 때 필요한 파일들이 있는 곳입니다. 저희 랩실 컴에서 실제 사용량은 100mb 내외입니다. 여기 파티션이 작아야 부팅할 때 컴퓨터가 탐색해야될 부분이 작아지고 부팅이 빨라지게 됩니다.
+
+/var - 5GB(논리파티션, ex4)
+
+/tmp - 5GB(논리파티션, ex4)
+
+파티션 나누는 것을 추천합니다. 2010년쯤에 tmp가 파티션으로 따로 지정되어 있지않다면 일반 user가 tmp에 들어가서 root 권한을 획득할 수 있다는 보안의 취약점이 발견되었습니다. 파티션 나누는 것으로 막을 수 있다고 합니다.
+
+/database - 150GB (논리파티션, ex4)
+
+개인적인 필요에 의해 만든 것입니다.
+
+/home - 나머지 1.8TB이상 (논리파티션, ex4)
+
+여기에 계정들을 위치시켜서 유저들 공간으로 만들었습니다.
+
+
+주파티션과 논리파티션은 개념이 조금 복잡합니다.
+
+우리가 쓰고 있는 하드디스크는 아무리 파티션을 많이 나눠봐야 4개까지 밖에 나눠지지 않습니다. 그래서 4개 이상의 파티션을 만들기위해서 도입한것이 논리파티션입니다. 더 자세한 내용을 쓰고 싶지만 제 지식이 짧아서.. 궁금하신 분들은 더 찾아보시길 바랍니다.
+
+=================================================================================
+
+reference : https://access.redhat.com/documentation/ko-KR/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s2-diskpartrecommend-x86.html
+
+출처: http://0561blue.tistory.com/44 [공대생으로 살아가기]
