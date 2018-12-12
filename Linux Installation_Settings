@@ -32,13 +32,14 @@ Then, press F10 key one the keyboard, and start try ubuntu and installing or ins
 
 --------- My Settings----------------------
 SSD
-1. /boot    ext4    1024 MB
-2.          efi     1924 MB
-3.          swap    16000 MB
+1.          swap   32000 MB
+2. /        ext4    50000 MB
+3. /boot    ext4    1024 MB
 4. /var     ext4    16000 MB
 5. /tmp     ext4    16000 MB
-6. /        ext4    200000 MB
-7. /home    ext4    Remaining size (262060 MB)
+6. /database   ext4   150000MB
+7.          efi     1024 MB
+8. /home    ext4    Remaining size
 
 HDD
 1./data     ext4    All
