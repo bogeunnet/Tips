@@ -74,6 +74,10 @@ $ sudo apt-get update
 -- you can try both of them
 
 
+-----여기서, Cloud not get lock~~ 뭐 나오면,
+sudo rm /var/lib/dpkg/lock
+으로 해당 파일을 지워주면 된다 -----
+
 NVIDIA 그래픽카드 설정은 블랙리스트로 등록해서 오동작이 없게 한다
 Add NVIDIA driver as blacklist to avoid error during booting.
 Reference
