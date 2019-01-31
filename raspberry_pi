@@ -37,5 +37,9 @@ pi@retropie:~ $ sudo ifconfig wlan0 up
 
 
 이후에, 단순 wifi 세팅
-http://progtrend.blogspot.com/2017/08/raspberry-pi-wifi.html
+https://webnautes.tistory.com/903
+<- 이게 더 잘됨 
+
+추가 참고  http://progtrend.blogspot.com/2017/08/raspberry-pi-wifi.html
+
 
