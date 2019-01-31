@@ -1,0 +1,41 @@
+라즈베리파이 Wifi 세팅을 위한 준비.
+
+pi@retropie:~ $ iwconfig
+eth0      no wireless extensions.
+lo        no wireless extensions.
+wlan1     IEEE 802.11  ESSID:off/any
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=31 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+이렇게 wifi가 off/any 일때, 
+
+pi@retropie:~ $ iwlist wlan0 scan
+wlan1     No scan results
+
+이것처럼 wlan0 을 scan해도 결과는 없다.
+
+이건 Location을 KR로 하면 안되고, GB 난 아예 Location 값이 없어야 한다.
+
+
+해결1단계. WiFi 사용국가 코드를 GB로 설정한다.
+pi@retropie:~ $ sudo vi /etc/wpa_supplicant/wpa_supplicant.conf 
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=GB
+network={
+        ssid="무선네트워크SSID"
+        psk="패스워드"
+}
+
+해결2단계. WiFi 네트워크 인터페이스를 내렸다가 올린다. 또는 과감히 리부팅한다.
+pi@retropie:~ $ sudo ifconfig wlan0 down
+pi@retropie:~ $ sudo ifconfig wlan0 up
+
+
+출처 https://www.withover.com/2018/08/wifi.html
+
+
+이후에, 단순 wifi 세팅
+http://progtrend.blogspot.com/2017/08/raspberry-pi-wifi.html
+
