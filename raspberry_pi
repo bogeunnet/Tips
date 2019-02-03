@@ -1,3 +1,9 @@
+라즈베리파이 설치 후 폰트가 깨지면?
+아래 설치해주면 됨
+sudo apt-get install fonts-unfonts-core
+출처 : https://ict-nroo.tistory.com/15
+
+
 라즈베리파이 Wifi 세팅을 위한 준비.
 
 pi@retropie:~ $ iwconfig
