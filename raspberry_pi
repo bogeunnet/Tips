@@ -55,3 +55,12 @@ MariaDB 를 설치 후 Mysql 처럼 사용되도록 설정 변경함
 출처 : https://altongmon.tistory.com/629
 
 
+Raspberry Pi에 설치되는 Rasberian OS의 최신 JDK 설치 장소
+아래를 통해서 설정변경할 수 있다.
+
+nano ~/.bashrc 파일내에 있음
+-----
+export JAVA_HOME="/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt"
+export PATH=$PATH:$JAVA_HOME/bin
+-----
+출처 : http://tiriboy.blogspot.com/2015/08/setting-javahome-on-raspberry-pi.html
