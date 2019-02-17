@@ -1,0 +1,16 @@
+Android App basic
+
+1) 가끔, 
+
+WARNING: Uninstalling will remove the application data!
+
+Do you want to uninstall the existing application?
+
+이렇게 기존에 앱을 uninstall할래? 하고 실제로 동작하지 않는 경우가 있는데, 
+
+이땐 instant run으로 Build하는걸 disable 해야함.
+(Preferences -> Build, Execution, Deployment -> instant run 에서 Disable해야함)
+
+출처 : https://stackoverflow.com/questions/32718044/android-studio-application-installation-failed
+
+
